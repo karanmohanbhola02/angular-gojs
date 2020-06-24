@@ -1,0 +1,27 @@
+<h1>Angular with GoJS State Chart</h1>
+
+<div class="left">
+  State Chart
+  <gojs-diagram #myDiagram [initDiagram]='initDiagram' [nodeDataArray]='diagramNodeData'
+    [linkDataArray]='diagramLinkData' [divClassName]='diagramDivClassName' [modelData]='diagramModelData'
+    [skipsDiagramUpdate]='skipsDiagramUpdate' (modelChange)='diagramModelChange($event)'>
+  </gojs-diagram>
+</div>
+
+<div class="clear left box">
+  <h3>Links in app data</h3>
+  <ul>
+    <li *ngFor="let ld of diagramLinkData">
+      From: {{ ld.from }} To: {{ld.to}},
+    </li>
+  </ul>
+</div>
+
+<div class="left box">
+  <h3>Nodes in app data</h3>
+  <ul>
+    <li *ngFor="let nd of diagramNodeData">
+      Node Key: {{nd.key}}, LOC: {{nd.loc}}
+    </li>
+  </ul>
+</div>
